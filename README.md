@@ -20,6 +20,7 @@ The pipeline ingests streaming data, processes it in Databricks (PySpark), and s
  ## 🛠️ Tools & Technologies
 
 - Azure Event Hub – Real-time data ingestion
+- Azure Data Factory - Orchestration
 - Azure Databricks – PySpark-based ETL processing
 - Azure Data Lake Storage – Staging raw and curated data
 - Azure Synapse SQL Pool – Data warehouse for analytics
@@ -64,6 +65,10 @@ The pipeline ingests streaming data, processes it in Databricks (PySpark), and s
 -  [Notebook 3](databricks_notebooks/03_dim_department.py): Builds the Department dimension table for the Gold layer.
 -  [Notebook 4](databricks_notebooks/03_gold_dim_patients.py):Creates the Patient dimension table for the Gold layer.
 -  [Notebook 5](databricks_notebooks/03_gold_fact.py):Generates fact tables with business metrics for analytical querying.
+
+### 5.Orchestration pipeline
+![Orchestration Diagram](Orchestration.png)
+I have triggered the gold pipe line using the ADF if the silver has more than 5 files arrives 
   
 ### 5. Synapse SQL Pool
   - Created dedicated SQL Pool.
